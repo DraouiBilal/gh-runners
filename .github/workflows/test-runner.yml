@@ -1,0 +1,20 @@
+name: Test Self-Hosted Runner
+
+on: [push]
+
+jobs:
+  test-runner:
+    runs-on: 
+    - self-hosted  # Targets your "runner1" in Default pool
+    - runner2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: List working directory
+        run: |
+          pwd
+          ls -la
+          echo "Running on: $RUNNER_NAME"
+          echo "Work folder: $GITHUB_WORKSPACE"
+
