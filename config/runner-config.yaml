@@ -1,0 +1,9 @@
+runner_config:
+  url: "https://github.com/DraouiBilal/gh-runners"
+  labels: 
+    - "linux"
+    - "podman"
+    - "self-hosted"
+  runner_group: "Default"
+  work_directory: "_work"
+
