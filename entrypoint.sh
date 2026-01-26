@@ -22,6 +22,10 @@ echo "Labels: $LABELS"
 echo "Runner Group: $RUNNER_GROUP"
 echo "Work Directory: $WORK_DIR"
 
+cp -r ./* ./workspace
+
+cd workspace
+
 ./config.sh --url $URL --token $TOKEN --name "$NAME" --runnergroup "$RUNNER_GROUP" --labels "$LABELS" --work "$WORK_DIR"
 
 ./run.sh

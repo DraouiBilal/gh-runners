@@ -14,7 +14,7 @@ RUN wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/d
 
 USER runner
 
-RUN cd && mkdir -p actions-runner && cd actions-runner
+RUN cd && mkdir -p actions-runner/workspace && cd actions-runner
 
 WORKDIR /home/runner/actions-runner
 
@@ -29,5 +29,6 @@ RUN cd /home/runner/actions-runner && ./bin/installdependencies.sh
 USER runner
 
 COPY ./entrypoint.sh /home/runner/actions-runner/entrypoint.sh
+
 
 ENTRYPOINT ["/home/runner/actions-runner/entrypoint.sh"]
